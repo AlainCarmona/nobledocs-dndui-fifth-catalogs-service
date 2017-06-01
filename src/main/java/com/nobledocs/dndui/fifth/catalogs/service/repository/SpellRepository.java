@@ -5,13 +5,18 @@
  */
 package com.nobledocs.dndui.fifth.catalogs.service.repository;
 
-import com.nobledocs.dndui.fifth.catalogs.service.entity.Spell;
+import com.nobledocs.dndui.fifth.commons.entity.Spell;
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
 /**
  *
  * @author Alain Carmona
  */
 public interface SpellRepository extends MongoRepository<Spell, Integer> {
+
+    @Query(value = "{}", fields = "{ _id : 1, name : 1 }")
+    List<Spell> findAllNames();
 
 }

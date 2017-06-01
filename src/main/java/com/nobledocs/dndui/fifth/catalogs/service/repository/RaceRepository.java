@@ -5,7 +5,7 @@
  */
 package com.nobledocs.dndui.fifth.catalogs.service.repository;
 
-import com.nobledocs.dndui.fifth.catalogs.service.entity.Race;
+import com.nobledocs.dndui.fifth.commons.entity.Race;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

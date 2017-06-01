@@ -5,13 +5,13 @@
  */
 package com.nobledocs.dndui.fifth.catalogs.service;
 
-import com.nobledocs.dndui.fifth.catalogs.service.entity.DnduiClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import com.nobledocs.dndui.fifth.catalogs.service.repository.DnduiClassRepository;
+import com.nobledocs.dndui.fifth.commons.entity.DnduiClass;
 
 /**
  *
