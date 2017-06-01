@@ -5,14 +5,15 @@
  */
 package com.nobledocs.dndui.fifth.catalogs.service.entity;
 
+import com.nobledocs.dndui.fifth.catalogs.service.util.ToGson;
 import org.springframework.data.annotation.Id;
 
 /**
  *
  * @author z841158
  */
-public class Spell {
-    
+public class Spell extends ToGson {
+
     @Id
     private int id;
     private String name;
@@ -89,5 +90,5 @@ public class Spell {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
 }

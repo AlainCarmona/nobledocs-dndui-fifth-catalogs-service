@@ -5,13 +5,14 @@
  */
 package com.nobledocs.dndui.fifth.catalogs.service.entity;
 
+import com.nobledocs.dndui.fifth.catalogs.service.util.ToGson;
 import org.springframework.data.annotation.Id;
 
 /**
  *
  * @author z841158
  */
-public class Race {
+public class Race extends ToGson {
 
     @Id
     private int id;
