@@ -18,5 +18,7 @@ public interface SpellRepository extends MongoRepository<Spell, Integer> {
 
     @Query(value = "{}", fields = "{ _id : 1, name : 1 }")
     List<Spell> findAllNames();
+    
+    Spell findByName(String name);
 
 }

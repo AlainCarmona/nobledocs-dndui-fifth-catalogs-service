@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SpellServiceBoImpl implements SpellServiceBo {
-    
+
     @Autowired
     private SpellRepository repository;
 
@@ -31,18 +31,18 @@ public class SpellServiceBoImpl implements SpellServiceBo {
     @Override
     public DnduiResponseDto findAllNames() {
         DnduiResponseDto response = new DnduiResponseDto();
-        
+
         try {
             List<Spell> spells = repository.findAllNames();
-            
+
             response.setCode(200);
             response.setMessage("OK");
             response.setBody(spells);
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             response.setCode(500);
             response.setMessage("Internal server error on catalogs service (Spell names)");
         }
-        
+
         return response;
     }
 
@@ -58,7 +58,20 @@ public class SpellServiceBoImpl implements SpellServiceBo {
 
     @Override
     public DnduiResponseDto findByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DnduiResponseDto response = new DnduiResponseDto();
+
+        try {
+            Spell spell = repository.findByName(name);
+
+            response.setCode(200);
+            response.setMessage("OK");
+            response.setBody(spell);
+        } catch (Exception ex) {
+            response.setCode(500);
+            response.setMessage("Internal server error on catalogs service (Spell by name)");
+        }
+
+        return response;
     }
 
 }

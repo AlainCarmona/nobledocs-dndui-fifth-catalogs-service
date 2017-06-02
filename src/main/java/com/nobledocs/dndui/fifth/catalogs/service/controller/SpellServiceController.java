@@ -8,9 +8,9 @@ package com.nobledocs.dndui.fifth.catalogs.service.controller;
 import com.nobledocs.dndui.fifth.catalogs.service.bo.SpellServiceBo;
 import com.nobledocs.dndui.fifth.commons.dto.DnduiResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,7 +24,6 @@ public class SpellServiceController {
     @Autowired
     private SpellServiceBo bo;
     
-    @CrossOrigin("https://alaincarmona.github.io/nobledocs-dndui-fifth-catalogs-client/")
     @GetMapping("/findAllNames")
     public DnduiResponseDto findAllNames() {
         DnduiResponseDto response = new DnduiResponseDto();
@@ -37,4 +36,18 @@ public class SpellServiceController {
         
         return response;
     }
+    
+    @GetMapping("findByName")
+    public DnduiResponseDto findByName(@RequestParam(value = "name") String name) {
+        DnduiResponseDto response = new DnduiResponseDto();
+        
+        try {
+            response = bo.findByName(name);
+        } catch(Exception ex) {
+            
+        }
+        
+        return response;
+    }
+    
 }

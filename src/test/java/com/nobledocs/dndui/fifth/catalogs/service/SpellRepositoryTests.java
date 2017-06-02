@@ -62,4 +62,14 @@ public class SpellRepositoryTests {
         LOG.info(spell.toString());
     }
 
+    @Test
+    public void findByNameTest() {
+        Spell spell = repository.findByName("Bane");
+
+        assertNotNull(spell);
+        assertThat(spell.getName().equals("Bane"));
+
+        LOG.info(spell.toString());
+    }
+
 }
