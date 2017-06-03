@@ -6,9 +6,8 @@
     <groupId>com.nobledocs.dndui</groupId>
     <artifactId>nobledocs-dndui-fifth-catalogs-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <!--packaging>war</packaging-->
-    <packaging>jar</packaging>
-
+    <packaging>war</packaging>
+    
     <name>nobledocs-dndui-fifth-catalogs-service</name>
     <description>Demo project for Spring Boot</description>
 
@@ -29,19 +28,19 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <!--exclusions>
+            <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
-            </exclusions-->
+            </exclusions>
         </dependency>
         
-        <!--dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
-        </dependency-->
+        </dependency>
         
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -69,8 +68,8 @@
             <groupId>com.nobledocs.dndui</groupId>
             <artifactId>nobledocs-dndui-fifth-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <!--scope>system</scope>
-            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/nobledocs-dndui-fifth-commons-0.0.1-SNAPSHOT.jar</systemPath-->
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/nobledocs-dndui-fifth-commons-0.0.1-SNAPSHOT.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -86,7 +85,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!--plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
@@ -95,7 +94,7 @@
                     <outputDirectory>target</outputDirectory>
                     <warName>ROOT</warName>
                 </configuration>
-            </plugin-->
+            </plugin>
         </plugins>
     </build>
     

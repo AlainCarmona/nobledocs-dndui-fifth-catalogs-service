@@ -1,7 +1,7 @@
 
 var app = angular.module('dnduiApp', []);
 
-app.controller('dnduiCtrl', function ($scope, $http) {
+app.controller('dnduiCtrl', function ($scope, $http, $sce) {
   $scope.findByName = findByName;
 
   $scope.initials = [
@@ -22,7 +22,9 @@ app.controller('dnduiCtrl', function ($scope, $http) {
   function findByName(name) {
     $http.get("http://localhost:8080/spell/findByName?name=" + name).then(function (response) {
       if (response.data.code === 200) {
-        $scope.modalSpell = response.data.body;
+        $scope.modalSpell = {};
+        $scope.modalSpell.name = response.data.body.name;
+        $scope.modalSpell.description = $sce.trustAsHtml(response.data.body.description);
       }
     });
   }
