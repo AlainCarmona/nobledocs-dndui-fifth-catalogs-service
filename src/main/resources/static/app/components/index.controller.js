@@ -13,14 +13,14 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
     'Z'
   ];
 
-  $http.get("http://localhost:8080/spell/findAllNames").then(function (response) {
+  $http.get("/spell/findAllNames").then(function (response) {
     if (response.data.code === 200) {
       $scope.spells = response.data.body;
     }
   });
 
   function findByName(name) {
-    $http.get("http://localhost:8080/spell/findByName?name=" + name).then(function (response) {
+    $http.get("/spell/findByName?name=" + name).then(function (response) {
       if (response.data.code === 200) {
         $scope.modalSpell = {};
         $scope.modalSpell.name = response.data.body.name;
