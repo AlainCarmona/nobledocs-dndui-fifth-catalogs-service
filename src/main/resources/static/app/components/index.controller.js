@@ -24,6 +24,11 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
       if (response.data.code === 200) {
         $scope.modalSpell = {};
         $scope.modalSpell.name = response.data.body.name;
+        $scope.modalSpell.descriptor = response.data.body.descriptor;
+        $scope.modalSpell.castingTime = response.data.body.castingTime;
+        $scope.modalSpell.range = response.data.body.range;
+        $scope.modalSpell.components = response.data.body.components;
+        $scope.modalSpell.duration = response.data.body.duration;
         $scope.modalSpell.description = $sce.trustAsHtml(response.data.body.description);
       }
     });

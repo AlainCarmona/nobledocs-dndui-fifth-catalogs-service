@@ -190,6 +190,7 @@ footer .glyphicon {
 }
 .modal-header {
     background-color: brown;
+    color: white;
 }
 .modal-header h4 {
     color: white;

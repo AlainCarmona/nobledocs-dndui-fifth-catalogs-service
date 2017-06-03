@@ -113,517 +113,524 @@
                                     </a>
                                 </p>
                             </div>
-                        </div>      
-                    </div>      
+                        </div>
+                    </div>
                 </div>    
             </div>
         </div>
-        
+
         <!-- SPELLS MODAL -->
-            <div class="modal fade" id="indexModal" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">{{modalSpell.name}}</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p ng-bind-html="modalSpell.description"></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+        <div class="modal fade" id="indexModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                        <h4 class="modal-title">{{modalSpell.name}}</h4>
+                        <em>{{modalSpell.descriptor}}</em>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong style="color: black;">Casting time: </strong> {{modalSpell.castingTime}}</li>
+                        <li class="list-group-item"><strong style="color: black;">Range: </strong> {{modalSpell.range}}</li>
+                        <li class="list-group-item"><strong style="color: black;">Components: </strong> {{modalSpell.components}}</li>
+                        <li class="list-group-item"><strong style="color: black;">Duration: </strong> {{modalSpell.duration}}</li>
+                    </ul>
+                    <div class="modal-body">
+                        <p ng-bind-html="modalSpell.description"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-            <!-- WEAPONS MODAL -->
-            <div class="modal fade" id="weaponsModal" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">WEAPONS</h4>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Cost</th>
-                                        <th>Damage</th>
-                                        <th>Weight</th>
-                                        <th>Properties</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><em>Simple Melee Weapons</em></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Club</td>
-                                        <td>1 sp</td>
-                                        <td>1d4 bludgeoning</td>
-                                        <td>2 lb.</td>
-                                        <td>Light</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dagger</td>
-                                        <td>2 gp</td>
-                                        <td>1d4 piercing</td>
-                                        <td>1 lb.</td>
-                                        <td>Finesse, light, thrown (range 20/60)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greatclub</td>
-                                        <td>2 sp</td>
-                                        <td>1d8 bludgeoning</td>
-                                        <td>10 lb.</td>
-                                        <td>Two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Handaxe</td>
-                                        <td>5 gp</td>
-                                        <td>1d6 slashing</td>
-                                        <td>2 lb.</td>
-                                        <td>Light, thrown (range 20/60)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Javelin</td>
-                                        <td>5 sp</td>
-                                        <td>1d6 piercing</td>
-                                        <td>2 lb.</td>
-                                        <td>Thrown (30/120)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Light hammer</td>
-                                        <td>2 gp</td>
-                                        <td>1d4 bludgeoning</td>
-                                        <td>2 lb.</td>
-                                        <td>Light, thrown (20/60)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mace</td>
-                                        <td>5 gp</td>
-                                        <td>1d4 bludgeoning</td>
-                                        <td>4 lb.</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quarterstaff</td>
-                                        <td>2 sp</td>
-                                        <td>1d6 bludgeoning</td>
-                                        <td>4 lb.</td>
-                                        <td>Versatile (1d8)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sickle</td>
-                                        <td>1 gp</td>
-                                        <td>1d4 slashing</td>
-                                        <td>2 lb.</td>
-                                        <td>Light</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spear</td>
-                                        <td>1 gp</td>
-                                        <td>1d6 piercing</td>
-                                        <td>3 lb.</td>
-                                        <td>Thrown (range 20/60), versatile (1d8)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unarmed strike</td>
-                                        <td>-</td>
-                                        <td>1 bludgeoning</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td><em>Simple Ranged Weapons</em></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crossbow, light</td>
-                                        <td>25 gp</td>
-                                        <td>1d8 piercing</td>
-                                        <td>5 lb.</td>
-                                        <td>Ammunition (range 80/320), loading, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dart</td>
-                                        <td>5 cp</td>
-                                        <td>1d4 piercing</td>
-                                        <td>1/4 lb.</td>
-                                        <td>Finesse, thrown (range 20/60)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shortbow</td>
-                                        <td>25 gp</td>
-                                        <td>1d6 piercing</td>
-                                        <td>2 lb.</td>
-                                        <td>Ammunition (range 80/320), two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sling</td>
-                                        <td>1 sp</td>
-                                        <td>1d4 bludgeoning</td>
-                                        <td>-</td>
-                                        <td>Ammunition (range 30/120)</td>
-                                    </tr>
-                                    <tr>
-                                        <td><em>Martial Melee Weapons</em></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Battleaxe</td>
-                                        <td>10 gp</td>
-                                        <td>1d8 slashing</td>
-                                        <td>4 lb.</td>
-                                        <td>Versatile (1d10)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flail</td>
-                                        <td>10 gp</td>
-                                        <td>1d8 bludgeoning</td>
-                                        <td>2 lb.</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Glaive</td>
-                                        <td>20 gp</td>
-                                        <td>1d10 slashing</td>
-                                        <td>6 lb.</td>
-                                        <td>Heavy, reach, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greataxe</td>
-                                        <td>30 gp</td>
-                                        <td>1d12 slashing</td>
-                                        <td>7 lb.</td>
-                                        <td>Heavy, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greatsword</td>
-                                        <td>50 gp</td>
-                                        <td>2d6 slashing</td>
-                                        <td>6 lb.</td>
-                                        <td>Heavy, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Halberd</td>
-                                        <td>20 gp</td>
-                                        <td>1d10 slashing</td>
-                                        <td>6 lb.</td>
-                                        <td>Heavy, reach, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lance</td>
-                                        <td>10 gp</td>
-                                        <td>1d12 piercing</td>
-                                        <td>6 lb.</td>
-                                        <td>Reach, special</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Longsword</td>
-                                        <td>15 gp</td>
-                                        <td>1d8 slashing</td>
-                                        <td>3 lb.</td>
-                                        <td>Versatile (1d10)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maul</td>
-                                        <td>10 gp</td>
-                                        <td>2d6 bludgeoning</td>
-                                        <td>10 lb.</td>
-                                        <td>Heavy, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Morningstar</td>
-                                        <td>15 gp</td>
-                                        <td>1d8 piercing</td>
-                                        <td>4 lb.</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pike</td>
-                                        <td>5 gp</td>
-                                        <td>1d10 piercing</td>
-                                        <td>18 lb.</td>
-                                        <td>Heavy, reach, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rapier</td>
-                                        <td>25 gp</td>
-                                        <td>1d8 piercing</td>
-                                        <td>2 lb.</td>
-                                        <td>Finesse</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scimitar</td>
-                                        <td>25 gp</td>
-                                        <td>1d6 slashing</td>
-                                        <td>3 lb.</td>
-                                        <td>Finesse, light</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shortsword</td>
-                                        <td>10 gp</td>
-                                        <td>1d6 piercing</td>
-                                        <td>2 lb.</td>
-                                        <td>Finesse, light</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trident</td>
-                                        <td>5 gp</td>
-                                        <td>1d6 piercing</td>
-                                        <td>4 lb.</td>
-                                        <td>Thrown (range 20/60), versatile (1d8)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;War pick</td>
-                                        <td>5 gp</td>
-                                        <td>1d8 piercing</td>
-                                        <td>2 lb.</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Warhammer</td>
-                                        <td>15 gp</td>
-                                        <td>1d8 bludgeoning</td>
-                                        <td>2 lb.</td>
-                                        <td>Versatile (1d10)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whip</td>
-                                        <td>2 gp</td>
-                                        <td>1d4 slashing</td>
-                                        <td>3 lb.</td>
-                                        <td>Finesse, reach</td>
-                                    </tr>
-                                    <tr>
-                                        <td><em>Martial Ranged Weapons</em></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blowgun</td>
-                                        <td>10 gp</td>
-                                        <td>1 piercing</td>
-                                        <td>1 lb.</td>
-                                        <td>Ammunition (range 25/100), loading</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crossbow, hand</td>
-                                        <td>75 gp</td>
-                                        <td>1d6 piercing</td>
-                                        <td>3 lb.</td>
-                                        <td>Ammunition (range 30/120), light, loading</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crossbow, heavy</td>
-                                        <td>50 gp</td>
-                                        <td>1d10 piercing</td>
-                                        <td>18 lb.</td>
-                                        <td>Ammunition (range 100/400), heavy, loading, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Longbow</td>
-                                        <td>50 gp</td>
-                                        <td>1d8 piercing</td>
-                                        <td>2 lb.</td>
-                                        <td>Ammunition (range 150/600), heavy, two-handed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Net</td>
-                                        <td>1 gp</td>
-                                        <td>-</td>
-                                        <td>3 lb.</td>
-                                        <td>Special, thrown (range 5/15)</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+        </div>
+        <!-- WEAPONS MODAL -->
+        <div class="modal fade" id="weaponsModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">WEAPONS</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Cost</th>
+                                    <th>Damage</th>
+                                    <th>Weight</th>
+                                    <th>Properties</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><em>Simple Melee Weapons</em></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Club</td>
+                                    <td>1 sp</td>
+                                    <td>1d4 bludgeoning</td>
+                                    <td>2 lb.</td>
+                                    <td>Light</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dagger</td>
+                                    <td>2 gp</td>
+                                    <td>1d4 piercing</td>
+                                    <td>1 lb.</td>
+                                    <td>Finesse, light, thrown (range 20/60)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greatclub</td>
+                                    <td>2 sp</td>
+                                    <td>1d8 bludgeoning</td>
+                                    <td>10 lb.</td>
+                                    <td>Two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Handaxe</td>
+                                    <td>5 gp</td>
+                                    <td>1d6 slashing</td>
+                                    <td>2 lb.</td>
+                                    <td>Light, thrown (range 20/60)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Javelin</td>
+                                    <td>5 sp</td>
+                                    <td>1d6 piercing</td>
+                                    <td>2 lb.</td>
+                                    <td>Thrown (30/120)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Light hammer</td>
+                                    <td>2 gp</td>
+                                    <td>1d4 bludgeoning</td>
+                                    <td>2 lb.</td>
+                                    <td>Light, thrown (20/60)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mace</td>
+                                    <td>5 gp</td>
+                                    <td>1d4 bludgeoning</td>
+                                    <td>4 lb.</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quarterstaff</td>
+                                    <td>2 sp</td>
+                                    <td>1d6 bludgeoning</td>
+                                    <td>4 lb.</td>
+                                    <td>Versatile (1d8)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sickle</td>
+                                    <td>1 gp</td>
+                                    <td>1d4 slashing</td>
+                                    <td>2 lb.</td>
+                                    <td>Light</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spear</td>
+                                    <td>1 gp</td>
+                                    <td>1d6 piercing</td>
+                                    <td>3 lb.</td>
+                                    <td>Thrown (range 20/60), versatile (1d8)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unarmed strike</td>
+                                    <td>-</td>
+                                    <td>1 bludgeoning</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><em>Simple Ranged Weapons</em></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crossbow, light</td>
+                                    <td>25 gp</td>
+                                    <td>1d8 piercing</td>
+                                    <td>5 lb.</td>
+                                    <td>Ammunition (range 80/320), loading, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dart</td>
+                                    <td>5 cp</td>
+                                    <td>1d4 piercing</td>
+                                    <td>1/4 lb.</td>
+                                    <td>Finesse, thrown (range 20/60)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shortbow</td>
+                                    <td>25 gp</td>
+                                    <td>1d6 piercing</td>
+                                    <td>2 lb.</td>
+                                    <td>Ammunition (range 80/320), two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sling</td>
+                                    <td>1 sp</td>
+                                    <td>1d4 bludgeoning</td>
+                                    <td>-</td>
+                                    <td>Ammunition (range 30/120)</td>
+                                </tr>
+                                <tr>
+                                    <td><em>Martial Melee Weapons</em></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Battleaxe</td>
+                                    <td>10 gp</td>
+                                    <td>1d8 slashing</td>
+                                    <td>4 lb.</td>
+                                    <td>Versatile (1d10)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flail</td>
+                                    <td>10 gp</td>
+                                    <td>1d8 bludgeoning</td>
+                                    <td>2 lb.</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Glaive</td>
+                                    <td>20 gp</td>
+                                    <td>1d10 slashing</td>
+                                    <td>6 lb.</td>
+                                    <td>Heavy, reach, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greataxe</td>
+                                    <td>30 gp</td>
+                                    <td>1d12 slashing</td>
+                                    <td>7 lb.</td>
+                                    <td>Heavy, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greatsword</td>
+                                    <td>50 gp</td>
+                                    <td>2d6 slashing</td>
+                                    <td>6 lb.</td>
+                                    <td>Heavy, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Halberd</td>
+                                    <td>20 gp</td>
+                                    <td>1d10 slashing</td>
+                                    <td>6 lb.</td>
+                                    <td>Heavy, reach, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lance</td>
+                                    <td>10 gp</td>
+                                    <td>1d12 piercing</td>
+                                    <td>6 lb.</td>
+                                    <td>Reach, special</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Longsword</td>
+                                    <td>15 gp</td>
+                                    <td>1d8 slashing</td>
+                                    <td>3 lb.</td>
+                                    <td>Versatile (1d10)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maul</td>
+                                    <td>10 gp</td>
+                                    <td>2d6 bludgeoning</td>
+                                    <td>10 lb.</td>
+                                    <td>Heavy, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Morningstar</td>
+                                    <td>15 gp</td>
+                                    <td>1d8 piercing</td>
+                                    <td>4 lb.</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pike</td>
+                                    <td>5 gp</td>
+                                    <td>1d10 piercing</td>
+                                    <td>18 lb.</td>
+                                    <td>Heavy, reach, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rapier</td>
+                                    <td>25 gp</td>
+                                    <td>1d8 piercing</td>
+                                    <td>2 lb.</td>
+                                    <td>Finesse</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scimitar</td>
+                                    <td>25 gp</td>
+                                    <td>1d6 slashing</td>
+                                    <td>3 lb.</td>
+                                    <td>Finesse, light</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shortsword</td>
+                                    <td>10 gp</td>
+                                    <td>1d6 piercing</td>
+                                    <td>2 lb.</td>
+                                    <td>Finesse, light</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trident</td>
+                                    <td>5 gp</td>
+                                    <td>1d6 piercing</td>
+                                    <td>4 lb.</td>
+                                    <td>Thrown (range 20/60), versatile (1d8)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;War pick</td>
+                                    <td>5 gp</td>
+                                    <td>1d8 piercing</td>
+                                    <td>2 lb.</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Warhammer</td>
+                                    <td>15 gp</td>
+                                    <td>1d8 bludgeoning</td>
+                                    <td>2 lb.</td>
+                                    <td>Versatile (1d10)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whip</td>
+                                    <td>2 gp</td>
+                                    <td>1d4 slashing</td>
+                                    <td>3 lb.</td>
+                                    <td>Finesse, reach</td>
+                                </tr>
+                                <tr>
+                                    <td><em>Martial Ranged Weapons</em></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blowgun</td>
+                                    <td>10 gp</td>
+                                    <td>1 piercing</td>
+                                    <td>1 lb.</td>
+                                    <td>Ammunition (range 25/100), loading</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crossbow, hand</td>
+                                    <td>75 gp</td>
+                                    <td>1d6 piercing</td>
+                                    <td>3 lb.</td>
+                                    <td>Ammunition (range 30/120), light, loading</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crossbow, heavy</td>
+                                    <td>50 gp</td>
+                                    <td>1d10 piercing</td>
+                                    <td>18 lb.</td>
+                                    <td>Ammunition (range 100/400), heavy, loading, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Longbow</td>
+                                    <td>50 gp</td>
+                                    <td>1d8 piercing</td>
+                                    <td>2 lb.</td>
+                                    <td>Ammunition (range 150/600), heavy, two-handed</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Net</td>
+                                    <td>1 gp</td>
+                                    <td>-</td>
+                                    <td>3 lb.</td>
+                                    <td>Special, thrown (range 5/15)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-            <!-- ARMORS MODAL -->
-            <div class="modal fade" id="armorsModal" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">ARMORS</h4>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Armor</th>
-                                        <th>Cost</th>
-                                        <th>Armor Class (AC)</th>
-                                        <th>Strength</th>
-                                        <th>Stealth</th>
-                                        <th>Weight</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Light Armor</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Padded</td>
-                                        <td>5 gp</td>
-                                        <td>11 + Dex modifier</td>
-                                        <td>-</td>
-                                        <td>Disadvantage</td>
-                                        <td>8 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leather</td>
-                                        <td>10 gp</td>
-                                        <td>11 + Dex modifier</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>10 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Studded leather</td>
-                                        <td>45 gp</td>
-                                        <td>12 + Dex modifier</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>13 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Medium Armor</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hide</td>
-                                        <td>10 gp</td>
-                                        <td>12 + Dex modifier (max 2)</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>12 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chain shirt</td>
-                                        <td>50 gp</td>
-                                        <td>13 + Dex modifier (max 2)</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>20 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scale mail</td>
-                                        <td>50 gp</td>
-                                        <td>14 + Dex modifier (max 2)</td>
-                                        <td>-</td>
-                                        <td>Disadvantage</td>
-                                        <td>45 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breastplate</td>
-                                        <td>400 gp</td>
-                                        <td>14 + Dex modifier (max 2)</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>20 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Half plate</td>
-                                        <td>750 gp</td>
-                                        <td>15 + Dex modifier (max 2)</td>
-                                        <td>-</td>
-                                        <td>Disadvantage</td>
-                                        <td>40 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Heavy Armor</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ring mail</td>
-                                        <td>30 gp</td>
-                                        <td>14</td>
-                                        <td>-</td>
-                                        <td>Disadvantage</td>
-                                        <td>40 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chain mail</td>
-                                        <td>75 gp</td>
-                                        <td>16</td>
-                                        <td>Str 13</td>
-                                        <td>Disadvantage</td>
-                                        <td>55 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Splint</td>
-                                        <td>200 gp</td>
-                                        <td>17</td>
-                                        <td>Str 15</td>
-                                        <td>Disadvantage</td>
-                                        <td>60 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plate</td>
-                                        <td>1,500 gp</td>
-                                        <td>18</td>
-                                        <td>Str 15</td>
-                                        <td>Disadvantage</td>
-                                        <td>65 lb.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shield</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shield</td>
-                                        <td>10 gp</td>
-                                        <td>+2</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>6 lb.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+        </div>
+        <!-- ARMORS MODAL -->
+        <div class="modal fade" id="armorsModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">ARMORS</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Armor</th>
+                                    <th>Cost</th>
+                                    <th>Armor Class (AC)</th>
+                                    <th>Strength</th>
+                                    <th>Stealth</th>
+                                    <th>Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Light Armor</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Padded</td>
+                                    <td>5 gp</td>
+                                    <td>11 + Dex modifier</td>
+                                    <td>-</td>
+                                    <td>Disadvantage</td>
+                                    <td>8 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leather</td>
+                                    <td>10 gp</td>
+                                    <td>11 + Dex modifier</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>10 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Studded leather</td>
+                                    <td>45 gp</td>
+                                    <td>12 + Dex modifier</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>13 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>Medium Armor</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hide</td>
+                                    <td>10 gp</td>
+                                    <td>12 + Dex modifier (max 2)</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>12 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chain shirt</td>
+                                    <td>50 gp</td>
+                                    <td>13 + Dex modifier (max 2)</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>20 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scale mail</td>
+                                    <td>50 gp</td>
+                                    <td>14 + Dex modifier (max 2)</td>
+                                    <td>-</td>
+                                    <td>Disadvantage</td>
+                                    <td>45 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breastplate</td>
+                                    <td>400 gp</td>
+                                    <td>14 + Dex modifier (max 2)</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>20 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Half plate</td>
+                                    <td>750 gp</td>
+                                    <td>15 + Dex modifier (max 2)</td>
+                                    <td>-</td>
+                                    <td>Disadvantage</td>
+                                    <td>40 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>Heavy Armor</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ring mail</td>
+                                    <td>30 gp</td>
+                                    <td>14</td>
+                                    <td>-</td>
+                                    <td>Disadvantage</td>
+                                    <td>40 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chain mail</td>
+                                    <td>75 gp</td>
+                                    <td>16</td>
+                                    <td>Str 13</td>
+                                    <td>Disadvantage</td>
+                                    <td>55 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Splint</td>
+                                    <td>200 gp</td>
+                                    <td>17</td>
+                                    <td>Str 15</td>
+                                    <td>Disadvantage</td>
+                                    <td>60 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plate</td>
+                                    <td>1,500 gp</td>
+                                    <td>18</td>
+                                    <td>Str 15</td>
+                                    <td>Disadvantage</td>
+                                    <td>65 lb.</td>
+                                </tr>
+                                <tr>
+                                    <td>Shield</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shield</td>
+                                    <td>10 gp</td>
+                                    <td>+2</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>6 lb.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
+        </div>
     </body>
 </html>
