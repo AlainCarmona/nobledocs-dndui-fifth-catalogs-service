@@ -68,8 +68,8 @@
             <groupId>com.nobledocs.dndui</groupId>
             <artifactId>nobledocs-dndui-fifth-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <!--scope>system</scope>
-            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/nobledocs-dndui-fifth-commons-0.0.1-SNAPSHOT.jar</systemPath-->
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/nobledocs-dndui-fifth-commons-0.0.1-SNAPSHOT.jar</systemPath>
         </dependency>
 
         <dependency>
