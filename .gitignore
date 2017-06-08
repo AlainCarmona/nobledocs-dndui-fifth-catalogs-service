@@ -1,4 +1,7 @@
 target/
+pom.xml
+src/main/resources/application.properties
+src/main/java/com/nobledocs/dndui/fifth/catalogs/service/DnduiFifthCatalogsServiceApplication.java
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
