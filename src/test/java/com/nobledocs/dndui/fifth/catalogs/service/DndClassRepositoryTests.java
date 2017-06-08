@@ -10,8 +10,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import com.nobledocs.dndui.fifth.catalogs.service.repository.DnduiClassRepository;
-import com.nobledocs.dndui.fifth.commons.entity.DnduiClass;
+import com.nobledocs.dndui.fifth.commons.entity.DndClass;
+import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.nobledocs.dndui.fifth.catalogs.service.repository.DndClassRepository;
 
 /**
  *
@@ -19,19 +22,23 @@ import com.nobledocs.dndui.fifth.commons.entity.DnduiClass;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DnduiClassRepositoryTests {
+public class DndClassRepositoryTests {
     
     @Autowired
-    private DnduiClassRepository repository;
+    private DndClassRepository repository;
+    
+    private static final Logger LOG = LoggerFactory.getLogger(DndClassRepositoryTests.class);
     
     @Test
-    public void save() {
-        DnduiClass dnduiClass = new DnduiClass();
-        dnduiClass.setId(1);
-        dnduiClass.setName("Dwarf");
-        dnduiClass.setDescription("Dwarf description catalog...");
-        
-        repository.save(dnduiClass);
+    public void findAllNamesTest() {
+        List<DndClass> dndClasses = repository.findAllNames();
+        LOG.info(dndClasses.toString());
+    }
+    
+    @Test
+    public void findByNameTest() {
+        DndClass dndClasses = repository.findByName("Druid");
+        LOG.info(dndClasses.toString());
     }
     
 }

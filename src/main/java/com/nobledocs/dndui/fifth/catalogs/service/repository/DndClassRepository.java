@@ -5,13 +5,20 @@
  */
 package com.nobledocs.dndui.fifth.catalogs.service.repository;
 
-import com.nobledocs.dndui.fifth.commons.entity.DnduiClass;
+import com.nobledocs.dndui.fifth.commons.entity.DndClass;
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
 /**
  *
  * @author z841158
  */
-public interface DnduiClassRepository extends MongoRepository<DnduiClass, Integer> {
-
+public interface DndClassRepository extends MongoRepository<DndClass, Integer> {
+    
+    @Query(value = "{}", fields = "{ _id : 1, name : 1 }")
+    List<DndClass> findAllNames();
+    
+    DndClass findByName(String name);
+    
 }

@@ -9,15 +9,13 @@ import com.nobledocs.dndui.fifth.commons.dto.DnduiResponseDto;
 
 /**
  *
- * @author z841158
+ * @author Z841158
  */
-public interface SpellServiceBo {
+public interface DndClassServiceBo {
     
     DnduiResponseDto findAll();
     
     DnduiResponseDto findAllNames();
-    
-    DnduiResponseDto findAllNamesByInitial();
     
     DnduiResponseDto findById(int id);
     
