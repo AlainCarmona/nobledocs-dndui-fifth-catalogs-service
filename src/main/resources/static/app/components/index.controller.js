@@ -44,10 +44,19 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
   function findDndClassByName(name) {
     $http.get("/dndClass/findByName?name=" + name).then(function (response) {
       if (response.data.code === 200) {
+        var data = response.data.body;
+
         $scope.modalDndClass = {};
-        $scope.modalDndClass.name = response.data.body.name;
-        $scope.modalDndClass.featuresTable = $sce.trustAsHtml(response.data.body.featuresTable);
-        console.log(response);
+        $scope.modalDndClass.name = data.name;
+        $scope.modalDndClass.featuresTable = $sce.trustAsHtml(data.featuresTable);
+        $scope.modalDndClass.hitPoints = $sce.trustAsHtml(data.hitPoints);
+        $scope.modalDndClass.proficiencies = $sce.trustAsHtml(data.proficiencies);
+        $scope.modalDndClass.equipment = $sce.trustAsHtml(data.equipment);
+        $scope.modalDndClass.generalFeatures = data.generalFeatures;
+
+        for (var i = 0; i < $scope.modalDndClass.generalFeatures.length; i++) {
+          $scope.modalDndClass.generalFeatures[i].description = $sce.trustAsHtml($scope.modalDndClass.generalFeatures[i].description);
+        }
       }
     });
   }
