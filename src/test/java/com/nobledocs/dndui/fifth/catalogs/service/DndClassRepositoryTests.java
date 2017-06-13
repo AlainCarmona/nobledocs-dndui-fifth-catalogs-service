@@ -37,7 +37,7 @@ public class DndClassRepositoryTests {
     
     @Test
     public void findByNameTest() {
-        DndClass dndClasses = repository.findByName("Druid");
+        DndClass dndClasses = repository.findByName("Bard");
         LOG.info(dndClasses.toString());
     }
     

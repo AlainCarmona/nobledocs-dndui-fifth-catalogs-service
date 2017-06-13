@@ -57,6 +57,14 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
         for (var i = 0; i < $scope.modalDndClass.generalFeatures.length; i++) {
           $scope.modalDndClass.generalFeatures[i].description = $sce.trustAsHtml($scope.modalDndClass.generalFeatures[i].description);
         }
+        
+        $scope.modalDndClass.pathName = data.classPaths.name;
+        $scope.modalDndClass.pathDescription = $sce.trustAsHtml(data.classPaths.description);
+        $scope.modalDndClass.paths = data.classPaths.paths;
+        
+        for (var i = 0; i < $scope.modalDndClass.paths.length; i++) {
+          $scope.modalDndClass.paths[i].description = $sce.trustAsHtml($scope.modalDndClass.paths[i].description);
+        }
       }
     });
   }

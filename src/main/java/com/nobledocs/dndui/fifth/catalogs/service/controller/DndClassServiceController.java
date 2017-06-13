@@ -37,7 +37,7 @@ public class DndClassServiceController {
         return response;
     }
     
-    @GetMapping("findByName")
+    @GetMapping("/findByName")
     public DnduiResponseDto findByName(@RequestParam(value = "name") String name) {
         DnduiResponseDto response = new DnduiResponseDto();
         

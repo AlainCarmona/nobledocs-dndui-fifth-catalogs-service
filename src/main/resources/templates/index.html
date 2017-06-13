@@ -148,7 +148,7 @@
         </div>
       </div>
     </div>
-    <!-- SPELLS MODAL -->
+    <!-- CLASSES MODAL -->
     <div class="modal fade" id="dndClassModal" role="dialog">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -168,6 +168,12 @@
             <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
             <p ng-bind-html="modalDndClass.equipment"></p>
             <div ng-repeat="feature in modalDndClass.generalFeatures">
+              <hr/><h4 class="text-uppercase">{{feature.name}}</h4>
+              <p ng-bind-html="feature.description"></p>
+            </div>
+            <h3 class="text-uppercase">{{modalDndClass.pathName}}</h3>
+            <p ng-bind-html="modalDndClass.pathDescription"></p>
+            <div ng-repeat="feature in modalDndClass.paths">
               <hr/><h4 class="text-uppercase">{{feature.name}}</h4>
               <p ng-bind-html="feature.description"></p>
             </div>
