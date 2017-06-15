@@ -26,6 +26,18 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
     }
   });
 
+  $http.get("/armor/findAll").then(function (response) {
+    if (response.data.code === 200) {
+      $scope.armors = response.data.body;
+    }
+  });
+
+  $http.get("/weapon/findAll").then(function (response) {
+    if (response.data.code === 200) {
+      $scope.weapons = response.data.body;
+    }
+  });
+
   function findByName(name) {
     $http.get("/spell/findByName?name=" + name).then(function (response) {
       if (response.data.code === 200) {
