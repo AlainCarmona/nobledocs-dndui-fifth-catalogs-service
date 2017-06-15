@@ -8,19 +8,19 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
-//@ComponentScan
-//@EnableAutoConfiguration
+@Configuration
+@ComponentScan
+@EnableAutoConfiguration
 @SpringBootApplication
-public class DnduiFifthCatalogsServiceApplication /*extends SpringBootServletInitializer*/ {
+public class DnduiFifthCatalogsServiceApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(DnduiFifthCatalogsServiceApplication.class, args);
     }
     
-//    @Override
-//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-//        return application.sources(DnduiFifthCatalogsServiceApplication.class);
-//    }
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(DnduiFifthCatalogsServiceApplication.class);
+    }
     
 }
