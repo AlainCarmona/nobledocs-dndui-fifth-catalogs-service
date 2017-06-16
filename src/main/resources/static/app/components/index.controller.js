@@ -38,6 +38,18 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
     }
   });
 
+  $http.get("/experience/findAll").then(function (response) {
+    if (response.data.code === 200) {
+      $scope.experience = response.data.body;
+    }
+  });
+
+  $http.get("/heightAndWeight/findAll").then(function (response) {
+    if (response.data.code === 200) {
+      $scope.heightAndWeight = response.data.body;
+    }
+  });
+
   function findByName(name) {
     $http.get("/spell/findByName?name=" + name).then(function (response) {
       if (response.data.code === 200) {
