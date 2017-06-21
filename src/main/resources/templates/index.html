@@ -47,14 +47,18 @@
     <div id="portfolio" class="container-fluid text-center bg-grey">
       <h1>STARTER CATALOGS</h1>
       <div class="row text-center slideanim">
-        <!--div class="col-sm-4">
-            <div class="thumbnail">
-                <img th:src="@{/assets/img/races.jpg}" alt="Paris" width="400" height="300"/>
-                <h3>RACES</h3>
-                <p>One race</p>
-                <p>Another race</p>
-            </div>
-        </div-->
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img th:src="@{/assets/img/races.jpg}" alt="Paris" width="400" height="300"/>
+            <h3>RACES</h3>
+            <p ng-repeat="race in races">
+              <a data-toggle="modal" data-target="#raceModal"
+                 ng-click="findRaceByName(race.name)">
+                {{race.name}}
+              </a>
+            </p>
+          </div>
+        </div>
         <div class="col-sm-4">
           <div class="thumbnail">
             <img th:src="@{/assets/img/classes.jpg}" alt="New York" width="400" height="300"/>
@@ -67,13 +71,18 @@
             </p>
           </div>
         </div>
-        <!--div class="col-sm-4">
-            <div class="thumbnail">
-                <img th:src="@{/assets/img/backgrounds.jpg}" alt="San Francisco" width="400" height="300"/>
-                <h3>BACKGROUNDS</h3>
-                <p>Yes, San Fran is ours</p>
-            </div>
-        </div-->
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img th:src="@{/assets/img/backgrounds.jpg}" alt="San Francisco" width="400" height="300"/>
+            <h3>BACKGROUNDS</h3>
+            <p ng-repeat="background in backgrounds">
+              <a data-toggle="modal" data-target="#backgroundModal"
+                 ng-click="findBackgroundByName(background.name)">
+                {{background.name}}
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
 
       <!-- Container (Services Section) -->
@@ -169,25 +178,87 @@
             <h4 class="modal-title">{{modalDndClass.name}}</h4>
           </div>
           <div class="modal-body">
-            <p ng-bind-html="modalDndClass.featuresTable"></p>
-            <h3>CLASS FEATURES</h3>
-            <p>As a {{modalDndClass.name}}, you gain the following class features.</p>
-            <h4>HIT POINTS</h4>
-            <p ng-bind-html="modalDndClass.hitPoints"></p>
-            <h4>PROFICIENCIES</h4>
-            <p ng-bind-html="modalDndClass.proficiencies"></p>
-            <h4>EQUIPMENT</h4>
-            <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
-            <p ng-bind-html="modalDndClass.equipment"></p>
-            <div ng-repeat="feature in modalDndClass.generalFeatures">
-              <hr/><h4 class="text-uppercase">{{feature.name}}</h4>
-              <p ng-bind-html="feature.description"></p>
+            <div class="well">
+              <p ng-bind-html="modalDndClass.featuresTable"></p>
             </div>
-            <h3 class="text-uppercase">{{modalDndClass.pathName}}</h3>
-            <p ng-bind-html="modalDndClass.pathDescription"></p>
-            <div ng-repeat="feature in modalDndClass.paths">
-              <hr/><h4 class="text-uppercase">{{feature.name}}</h4>
-              <p ng-bind-html="feature.description"></p>
+            <div class="alert alert-warning">
+              <h3>CLASS FEATURES</h3>
+              <p>As a {{modalDndClass.name}}, you gain the following class features.</p>
+              <h4>HIT POINTS</h4>
+              <p ng-bind-html="modalDndClass.hitPoints"></p>
+              <h4>PROFICIENCIES</h4>
+              <p ng-bind-html="modalDndClass.proficiencies"></p>
+              <h4>EQUIPMENT</h4>
+              <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
+              <p ng-bind-html="modalDndClass.equipment"></p>
+            </div>
+            <div class="alert alert-info">
+              <div ng-repeat="feature in modalDndClass.generalFeatures">
+                <hr ng-if="$index > 0"/><h4 class="text-uppercase">{{feature.name}}</h4>
+                <p ng-bind-html="feature.description"></p>
+              </div>
+            </div>
+            <div class="alert alert-success">
+              <h3 class="text-uppercase alert-success">{{modalDndClass.pathName}}</h3>
+              <p ng-bind-html="modalDndClass.pathDescription"></p>
+              <div ng-repeat="feature in modalDndClass.paths">
+                <hr/><h4 class="text-uppercase">{{feature.name}}</h4>
+                <p ng-bind-html="feature.description"></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BACKGROUNDS MODAL -->
+    <div class="modal fade" id="backgroundModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+            <h4 class="modal-title">{{modalBackground.name}}</h4>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-warning">
+              <p ng-bind-html="modalBackground.content"></p>
+            </div>
+            <div class="well">
+              <p ng-bind-html="modalBackground.personalityTrait"></p>
+              <p ng-bind-html="modalBackground.ideal"></p>
+              <p ng-bind-html="modalBackground.bond"></p>
+              <p ng-bind-html="modalBackground.flaw"></p>
+            </div>
+            <div class="alert alert-success" ng-show="modalBackground.additionalContent">
+              <p ng-bind-html="modalBackground.additionalContent"></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- RACES MODAL -->
+    <div class="modal fade" id="raceModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+            <h4 class="modal-title">{{modalRace.name}}</h4>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-warning">
+              <h3>Traits</h3>
+              <hr/>
+              <p ng-bind-html="modalRace.traits"></p>
+            </div>
+            <div class="alert alert-info" ng-show="modalRace.subraces">
+              <h3>Subraces</h3>
+              <hr/>
+              <p ng-bind-html="modalRace.subraces"></p>
             </div>
           </div>
           <div class="modal-footer">

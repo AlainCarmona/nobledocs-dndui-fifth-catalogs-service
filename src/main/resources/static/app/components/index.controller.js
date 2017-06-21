@@ -3,7 +3,9 @@ var app = angular.module('dnduiApp', []);
 
 app.controller('dnduiCtrl', function ($scope, $http, $sce) {
   $scope.findByName = findByName;
+  $scope.findRaceByName = findRaceByName;
   $scope.findDndClassByName = findDndClassByName;
+  $scope.findBackgroundByName = findBackgroundByName;
 
   $scope.initials = [
     'A', 'B', 'C', 'D', 'E',
@@ -23,6 +25,18 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
   $http.get("/dndClass/findAllNames").then(function (response) {
     if (response.data.code === 200) {
       $scope.dndClasses = response.data.body;
+    }
+  });
+
+  $http.get("/background/findAllNames").then(function (response) {
+    if (response.data.code === 200) {
+      $scope.backgrounds = response.data.body;
+    }
+  });
+
+  $http.get("/race/findAllNames").then(function (response) {
+    if (response.data.code === 200) {
+      $scope.races = response.data.body;
     }
   });
 
@@ -81,14 +95,45 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
         for (var i = 0; i < $scope.modalDndClass.generalFeatures.length; i++) {
           $scope.modalDndClass.generalFeatures[i].description = $sce.trustAsHtml($scope.modalDndClass.generalFeatures[i].description);
         }
-        
+
         $scope.modalDndClass.pathName = data.classPaths.name;
         $scope.modalDndClass.pathDescription = $sce.trustAsHtml(data.classPaths.description);
         $scope.modalDndClass.paths = data.classPaths.paths;
-        
+
         for (var i = 0; i < $scope.modalDndClass.paths.length; i++) {
           $scope.modalDndClass.paths[i].description = $sce.trustAsHtml($scope.modalDndClass.paths[i].description);
         }
+      }
+    });
+  }
+
+  function findBackgroundByName(name) {
+    $http.get("/background/findByName?name=" + name).then(function (response) {
+      if (response.data.code === 200) {
+        var data = response.data.body;
+
+        $scope.modalBackground = {};
+        $scope.modalBackground.name = data.name;
+        $scope.modalBackground.content = $sce.trustAsHtml(data.content);
+        $scope.modalBackground.personalityTrait = $sce.trustAsHtml(data.personalityTrait);
+        $scope.modalBackground.ideal = $sce.trustAsHtml(data.ideal);
+        $scope.modalBackground.bond = $sce.trustAsHtml(data.bond);
+        $scope.modalBackground.flaw = $sce.trustAsHtml(data.flaw);
+        $scope.modalBackground.additionalContent = data.additionalContent !== 'null' ?
+                $sce.trustAsHtml(data.additionalContent) : null;
+      }
+    });
+  }
+
+  function findRaceByName(name) {
+    $http.get("/race/findByName?name=" + name).then(function (response) {
+      if (response.data.code === 200) {
+        var data = response.data.body;
+
+        $scope.modalRace = {};
+        $scope.modalRace.name = data.name;
+        $scope.modalRace.traits = $sce.trustAsHtml(data.traits);
+        $scope.modalRace.subraces = data.subraces !== '' ? $sce.trustAsHtml(data.subraces) : null;
       }
     });
   }

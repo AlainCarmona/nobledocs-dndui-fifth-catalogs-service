@@ -5,7 +5,7 @@
  */
 package com.nobledocs.dndui.fifth.catalogs.service.controller;
 
-import com.nobledocs.dndui.fifth.catalogs.service.bo.DndClassServiceBo;
+import com.nobledocs.dndui.fifth.catalogs.service.bo.RaceServiceBo;
 import com.nobledocs.dndui.fifth.commons.dto.DnduiResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Z841158
+ * @author z841158
  */
 @RestController
-@RequestMapping("/dndClass")
-public class DndClassServiceController {
+@RequestMapping("/race")
+public class RaceServiceController {
     
     @Autowired
-    private DndClassServiceBo bo;
+    private RaceServiceBo bo;
     
     @GetMapping("/findAllNames")
     public DnduiResponseDto findAll() {
