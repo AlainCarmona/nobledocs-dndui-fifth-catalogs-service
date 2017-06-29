@@ -21,4 +21,7 @@ public interface DndClassRepository extends MongoRepository<DndClass, Integer> {
     
     DndClass findByName(String name);
     
+    @Query(value = "{}", fields = "{ _id : 1, name : 1, spellList: 1 }")
+    List<DndClass> findAllDndClassSpells();
+    
 }

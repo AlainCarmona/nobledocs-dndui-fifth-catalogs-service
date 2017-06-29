@@ -5,7 +5,7 @@
  */
 package com.nobledocs.dndui.fifth.catalogs.service;
 
-import com.nobledocs.dndui.fifth.catalogs.service.repository.HeightAndWeightRepository;
+import com.nobledocs.dndui.fifth.catalogs.service.repository.LanguageRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -16,16 +16,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  *
- * @author z841158
+ * @author Z841158
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class HeightAndWeightTests {
+public class LanguageRepositoryTests {
     
     @Autowired
-    private HeightAndWeightRepository repository;
+    private LanguageRepository repository;
     
-    private final Logger LOG = LoggerFactory.getLogger(HeightAndWeightTests.class);
+    private final Logger LOG = LoggerFactory.getLogger(LanguageRepositoryTests.class);
     
     @Test
     public void findAllTest() {

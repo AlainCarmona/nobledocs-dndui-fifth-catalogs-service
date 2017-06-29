@@ -11,16 +11,8 @@ import com.nobledocs.dndui.fifth.commons.dto.DnduiResponseDto;
  *
  * @author Z841158
  */
-public interface DndClassServiceBo {
+public interface LanguageServiceBo {
     
     DnduiResponseDto findAll();
-    
-    DnduiResponseDto findAllNames();
-    
-    DnduiResponseDto findById(int id);
-    
-    DnduiResponseDto findByName(String name);
-    
-    DnduiResponseDto findAllDndClassSpells();
     
 }

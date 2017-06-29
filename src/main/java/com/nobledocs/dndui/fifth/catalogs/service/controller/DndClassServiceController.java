@@ -50,4 +50,17 @@ public class DndClassServiceController {
         return response;
     }
     
+    @GetMapping("/findAllSpells")
+    public DnduiResponseDto findAllSpells() {
+        DnduiResponseDto response = new DnduiResponseDto();
+
+        try {
+            response = bo.findAllDndClassSpells();
+        } catch (Exception ex) {
+
+        }
+
+        return response;
+    }
+    
 }

@@ -21,7 +21,7 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
       $scope.spells = response.data.body;
     }
   });
-
+  
   $http.get("/dndClass/findAllNames").then(function (response) {
     if (response.data.code === 200) {
       $scope.dndClasses = response.data.body;
@@ -64,6 +64,18 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
     }
   });
 
+  $http.get("/language/findAll").then(function (response) {
+    if (response.data.code === 200) {
+      $scope.languages = response.data.body;
+    }
+  });
+
+  $http.get("/dndClass/findAllSpells").then(function (response) {
+    if (response.data.code === 200) {
+      $scope.dndClassesSpellList = response.data.body;
+    }
+  });
+
   function findByName(name) {
     $http.get("/spell/findByName?name=" + name).then(function (response) {
       if (response.data.code === 200) {
@@ -103,6 +115,8 @@ app.controller('dnduiCtrl', function ($scope, $http, $sce) {
         for (var i = 0; i < $scope.modalDndClass.paths.length; i++) {
           $scope.modalDndClass.paths[i].description = $sce.trustAsHtml($scope.modalDndClass.paths[i].description);
         }
+        
+        $scope.modalDndClass.spellList = data.spellList;
       }
     });
   }

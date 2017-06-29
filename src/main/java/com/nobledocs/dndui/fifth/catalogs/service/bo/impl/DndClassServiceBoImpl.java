@@ -71,4 +71,23 @@ public class DndClassServiceBoImpl implements DndClassServiceBo {
         return response;
     }
 
+    @Override
+    public DnduiResponseDto findAllDndClassSpells() {
+        DnduiResponseDto response = new DnduiResponseDto();
+
+        try {
+            List<DndClass> dndClasses = repository.findAllDndClassSpells();
+
+            response.setCode(200);
+            response.setMessage("OK");
+            response.setBody(dndClasses);
+
+        } catch (Exception ex) {
+            response.setCode(500);
+            response.setMessage("Internal server error on catalogs service (D&D Class spells)");
+        }
+
+        return response;
+    }
+
 }

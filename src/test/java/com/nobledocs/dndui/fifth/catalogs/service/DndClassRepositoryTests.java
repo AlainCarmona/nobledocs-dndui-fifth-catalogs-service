@@ -41,4 +41,10 @@ public class DndClassRepositoryTests {
         LOG.info(dndClasses.toString());
     }
     
+    @Test
+    public void findAllDndClassSpellsTest() {
+        List<DndClass> dndClasses = repository.findAllDndClassSpells();
+        LOG.info(dndClasses.toString());
+    }
+    
 }
