@@ -124,6 +124,67 @@
       </div>
     </div>
 
+    <!-- CLASS SPELLS -->
+    <div id="pricing-2" class="container-fluid">
+      <div class="text-center">
+        <h1>CLASS SPELLS</h1>
+      </div>
+      <div class="row slideanim" ng-repeat="dndClass in dndClassesSpellList">
+        <div class="well text-center" ng-if="dndClass.spellList">
+          <div class="container">
+            <div ng-if="dndClass.spellList">
+              <h3 class="text-uppercase">{{dndClass.name}} SPELLS</h3>
+              <div class="col-sm-3 col-xs-12" ng-if="dndClass.spellList.levelZero">
+                <div class="panel panel-default text-center spell-panel">
+                  <div class="panel-heading">
+                    <h3>LEVEL 0 (CANTRIPS)</h3>
+                  </div>
+                  <div class="panel-body">
+                    <p ng-repeat="spell in dndClass.spellList.levelZero">
+                      <a data-toggle="modal" data-target="#indexModal"
+                         ng-click="findByName(spell.name)">
+                        {{spell.name}}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-xs-12" ng-if="dndClass.spellList.levelOne">
+                <div class="panel panel-default text-center spell-panel">
+                  <div class="panel-heading">
+                    <h3>LEVEL 1</h3>
+                  </div>
+                  <div class="panel-body">
+                    <p ng-repeat="spell in dndClass.spellList.levelOne">
+                      <a data-toggle="modal" data-target="#indexModal"
+                         ng-click="findByName(spell.name)">
+                        {{spell.name}}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-xs-12" ng-if="dndClass.spellList.levelTwo">
+                <div class="panel panel-default text-center spell-panel">
+                  <div class="panel-heading">
+                    <h3>LEVEL 2</h3>
+                  </div>
+                  <div class="panel-body">
+                    <p ng-repeat="spell in dndClass.spellList.levelTwo">
+                      <a data-toggle="modal" data-target="#indexModal"
+                         ng-click="findByName(spell.name)">
+                        {{spell.name}}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>    
+          </div>    
+        </div>    
+      </div>
+    </div>
+
     <!-- SPELLS -->
     <div id="pricing" class="container-fluid">
       <div class="text-center">
