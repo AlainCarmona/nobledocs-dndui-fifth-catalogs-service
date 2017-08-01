@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author z841158
  */
 @RestController
-@RequestMapping("/experience")
+@RequestMapping("/catalogs/experience")
 public class ExperienceServiceController {
 
     @Autowired

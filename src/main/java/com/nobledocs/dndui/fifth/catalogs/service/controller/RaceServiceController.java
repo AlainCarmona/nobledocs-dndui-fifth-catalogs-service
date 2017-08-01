@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author z841158
  */
 @RestController
-@RequestMapping("/race")
+@RequestMapping("/catalogs/race")
 public class RaceServiceController {
     
     @Autowired

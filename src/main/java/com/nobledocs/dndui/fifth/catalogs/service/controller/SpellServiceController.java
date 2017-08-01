@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author z841158
  */
 @RestController
-@RequestMapping("/spell")
+@RequestMapping("/catalogs/spell")
 public class SpellServiceController {
     
     @Autowired

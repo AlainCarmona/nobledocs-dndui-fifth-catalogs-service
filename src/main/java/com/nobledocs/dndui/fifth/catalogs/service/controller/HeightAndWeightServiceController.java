@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author z841158
  */
 @RestController
-@RequestMapping("/heightAndWeight")
+@RequestMapping("/catalogs/heightAndWeight")
 public class HeightAndWeightServiceController {
     
     @Autowired

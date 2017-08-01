@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>Dungeons&AMP;Dragons 5th</title>
+    <title>Dungeons &AMP; Dragons 5th</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -11,12 +11,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script th:src="@{/app/components/index.controller.js}"></script>
-    <script th:src="@{/app/components/index.js}"></script>
-    <link rel="stylesheet"  th:href="@{/assets/css/index.css}" />
-
+    <script th:src="@{/js/dndui-fifth.module.js}"></script>
+    <script th:src="@{/js/index.controller.js}"></script>
+    <script th:src="@{/js/index.js}"></script>
+    <link rel="stylesheet"  th:href="@{/css/index.css}" />
   </head>
-  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ng-app="dnduiApp" ng-controller="dnduiCtrl">
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ng-app="dndui-fifth" ng-controller="homeController">
 
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -40,7 +40,7 @@
       </div>
     </nav>
 
-    <div class="jumbotron text-center" th:style="'background:url(' + @{/assets/img/jumbotron.jpg} + '); background-repeat: no-repeat; background-size: 100%;'">
+    <div class="jumbotron text-center" th:style="'background:url(' + @{/img/jumbotron.jpg} + '); background-repeat: no-repeat; background-size: 100%;'">
     </div>
 
     <!-- Container (Portfolio Section) -->
@@ -49,7 +49,7 @@
       <div class="row text-center slideanim">
         <div class="col-sm-4">
           <div class="thumbnail">
-            <img th:src="@{/assets/img/races.jpg}" alt="Paris" width="400" height="300"/>
+            <img th:src="@{/img/races.jpg}" alt="Paris" width="400" height="300"/>
             <h3>RACES</h3>
             <p ng-repeat="race in races">
               <a data-toggle="modal" data-target="#raceModal"
@@ -61,7 +61,7 @@
         </div>
         <div class="col-sm-4">
           <div class="thumbnail">
-            <img th:src="@{/assets/img/classes.jpg}" alt="New York" width="400" height="300"/>
+            <img th:src="@{/img/classes.jpg}" alt="New York" width="400" height="300"/>
             <h3>CLASSES</h3>
             <p ng-repeat="dndClass in dndClasses">
               <a data-toggle="modal" data-target="#dndClassModal"
@@ -73,7 +73,7 @@
         </div>
         <div class="col-sm-4">
           <div class="thumbnail">
-            <img th:src="@{/assets/img/backgrounds.jpg}" alt="San Francisco" width="400" height="300"/>
+            <img th:src="@{/img/backgrounds.jpg}" alt="San Francisco" width="400" height="300"/>
             <h3>BACKGROUNDS</h3>
             <p ng-repeat="background in backgrounds">
               <a data-toggle="modal" data-target="#backgroundModal"

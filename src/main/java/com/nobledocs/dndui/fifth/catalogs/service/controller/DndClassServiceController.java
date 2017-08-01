@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Z841158
  */
 @RestController
-@RequestMapping("/dndClass")
+@RequestMapping("/catalogs/dndClass")
 public class DndClassServiceController {
     
     @Autowired

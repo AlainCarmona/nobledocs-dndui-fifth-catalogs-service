@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Z841158
  */
 @RestController
-@RequestMapping("/armor")
+@RequestMapping("/catalogs/armor")
 public class ArmorServiceController {
 
     @Autowired
